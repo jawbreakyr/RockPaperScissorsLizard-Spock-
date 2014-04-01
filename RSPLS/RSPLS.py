@@ -15,9 +15,7 @@ def name_to_number(name):
         name == "scissors"
         return 4
 
-    # convert name to number using if/elif/else
-    # don't forget to return the result!
-
+    
 # convert a number to name function
 def number_to_name(number):
     if number == 0:
@@ -33,12 +31,14 @@ def number_to_name(number):
         return "scissors"
     
 
-def rspls(player_choice):
+def rpsls(player_choice):
     
     print " " 
     # convert the player's choice to player_number using the function name_to_number()
     player_number = name_to_number(player_choice)
+    # computer picks a random number using randrange()
     comp_number = random.randrange(0, 5)
+    # convert the computer's number to computer choice using the function number_to_name()
     comp_choice = number_to_name(comp_number)
     difference = (comp_number - player_number) % 5
     # print out the message for the player's choice
@@ -51,9 +51,12 @@ def rspls(player_choice):
         print "Player wins!!"
     else:
         print "Player and Computer tie!"
-    
-rspls(raw_input(">"))
-#rspls("spock")
-#rspls("paper")
-#rspls("lizard")
-#rspls("scissors")
+
+"""	to play the game with raw_input remove the comment sign and
+    comment out the next rpsls """
+# rpsls(raw_input('Please select an input from the choices:"rock" "paper" "spock" "lizard" "scissors"'))
+rpsls("rock")
+rpsls("spock")
+rpsls("paper")
+rpsls("lizard")
+rpsls("scissors")

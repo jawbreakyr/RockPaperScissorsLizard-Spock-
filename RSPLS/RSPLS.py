@@ -29,6 +29,8 @@ def number_to_name(number):
     else:
         number == 4
         return "scissors"
+
+choices = ("rock", "paper", "scissors", "lizard", "spock")
     
 
 def rpsls(player_choice):
@@ -45,18 +47,20 @@ def rpsls(player_choice):
     print "Player chooses", player_choice
     print "Computer chooses", comp_choice
     
-    if difference == 1 or difference == 2:
+    if not player_choice in choices:
+    	print "ERROR: invalid choice, please select from the said choices."
+    elif difference == 1 or difference == 2:
         print "Computer wins!!"
     elif difference == 3 or difference == 4:
         print "Player wins!!"
     else:
         print "Player and Computer tie!"
 
-"""	to play the game with raw_input remove the comment sign and
-    comment out the next rpsls """
-# rpsls(raw_input('Please select an input from the choices:"rock" "paper" "spock" "lizard" "scissors"'))
-rpsls("rock")
-rpsls("spock")
-rpsls("paper")
-rpsls("lizard")
-rpsls("scissors")
+rpsls(raw_input('Please select an input from the choices:"rock" "paper" "spock" "lizard" "scissors"'))
+
+""" testing """
+# rpsls("rock")
+# rpsls("spock")
+# rpsls("paper")
+# rpsls("lizard")
+# rpsls("scissors")
